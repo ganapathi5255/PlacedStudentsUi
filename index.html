@@ -72,8 +72,8 @@
           // Create HTML elements for each item in the JSON data
           const cards = data
   .map(({ Image_Link, DEGREE_DETAILS, PACKAGE, COMPANY_NAME, NAME, ROLE }) => {
-
-    let packageValue = (PACKAGE && typeof PACKAGE === 'string') ? PACKAGE.replace(/[^0-9.]/g, '') : PACKAGE;
+ console.log(ROLE ,NAME)
+    let packageValue = (PACKAGE && typeof PACKAGE === 'string') ? PACKAGE.replace(/[^0-9.]/g, '') : PACKAGE||"4"
 
     let imageOrPlaceholder = Image_Link
   ? `<img src="${Image_Link}" alt="image" style="width: 100px; height: 100px; object-fit: fill;">`
