@@ -95,7 +95,7 @@
     <script>
       const div = document.getElementById("cards");
 
-      fetch("data.json")
+      fetch("data.json",)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
@@ -109,13 +109,13 @@
           const cards = data
   .map(({ Image_Link, DEGREE_DETAILS, PACKAGE, COMPANY_NAME, NAME, ROLE }) => {
 
-    let packageValue = (PACKAGE && typeof PACKAGE === 'string') ? PACKAGE.replace(/[^0-9.]/g, '') : PACKAGE;
+    let packageValue = (PACKAGE && typeof PACKAGE === 'string') ? PACKAGE.replace(/[^0-9.]/g, '') : "4";
 
     let imageOrPlaceholder = Image_Link
   ? `<img src="${Image_Link}" alt="image" style="width: 100px; height: 100px; object-fit: fill;">`
   : `<div style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; background-color: #D9D9D9; border-radius: 50%; font-size: 24px; font-weight: bold;">
        ${NAME[0]}
-     </div>;`
+     </div>`
 
     return `
       <div class="main d-flex gap-4 border p-4" style="width: 361px; height: 175px;">
